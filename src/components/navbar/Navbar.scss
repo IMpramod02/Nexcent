@@ -1,0 +1,83 @@
+@import '../../styles/index.scss';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $colorOnprimary;
+  padding: 15px 5px;
+  box-shadow: 0px 1px 3px 0px $colorJetblack, 0px 4px 8px 3px $colorLicorblack;
+
+  @media (max-width: 768px) {
+    padding: 5px 15px;
+    flex-direction: row-reverse;
+  }
+  .navbar-logo {
+    margin-left: 40px;
+  }
+  @media (max-width: 768px) {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
+.navbar-menu {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  .menu-item {
+    a {
+      text-decoration: none;
+      color: $colorSecondary;
+      @extend .text-body2;
+
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 14px;
+  margin-right: 50px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  .auth-button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    @extend .text-body2;
+
+    &.login {
+      color: $colorSecondary;
+      background-color: $colorOnprimer;
+    }
+
+    &.signup {
+      color: $colorOnprimary;
+      background-color: $colorPrimary;
+    }
+  }
+}
+
+.hamburger-icon {
+  display: none;
+  width: 48px;
+  height: 48px;
+  padding: 12px 28px;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
