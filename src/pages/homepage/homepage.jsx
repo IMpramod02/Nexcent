@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import './HomePage.scss';
 import mobil from '../../assets/icons/mobil.png';
 const HomePage = () => {
@@ -21,6 +21,22 @@ const HomePage = () => {
         </p>
         <button className="learn-more-button">Learn more</button>
       </div>
+    </div>
+  );
+};
+
+export default HomePage;*/
+
+//import React from 'react';
+import './HomePage.scss';
+import LeftSection from './leftsection';
+import RightSection from './rightsection';
+
+const HomePage = () => {
+  return (
+    <div className="homepage-container">
+      <LeftSection />
+      <RightSection />
     </div>
   );
 };

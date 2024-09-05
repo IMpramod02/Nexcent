@@ -15,6 +15,8 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.scss';
 import Navbar from './components/navbar/Navbar';
 import HomePage from './pages/homepage/homepage';
+import SitePage from './pages/sitepage/sitepage';
+import CaringPage from './pages/caringpage/caringpage';
 function App() {
   return (
     <div>
@@ -23,6 +25,8 @@ function App() {
         <h1>Hello Vite + React!</h1>
         <p>This is a sample React app with Vite and SCSS.</p>
         <HomePage />
+        <SitePage />
+        <CaringPage />
       </main>
     </div>
   );
