@@ -1,20 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
 import { MENU_ITEMS, AUTH_ITEMS } from './constants';
 import logo from '../../assets/icons/logo.png';
 import hamburger from '../../assets/icons/hamburger.png';
 
 const Navbar = () => {
+  const location = useLocation();
   const [activeItem, setActiveItem] = useState('');
 
   useEffect(() => {
-    setActiveItem(window.location.pathname);
-  }, []);
-
-  const handleMenuClick = (href) => {
-    setActiveItem(href);
-  };
+    setActiveItem(location.pathname); // Set the active item based on the current path
+  }, [location]);
 
   return (
     <nav className="navbar">
@@ -27,13 +25,12 @@ const Navbar = () => {
       <ul className="navbar-menu">
         {MENU_ITEMS.map((item) => (
           <li key={item.href} className="menu-item">
-            <a
-              href={item.href}
+            <Link
+              to={item.href}
               className={activeItem === item.href ? 'active' : ''}
-              onClick={() => handleMenuClick(item.href)}
             >
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -41,13 +38,13 @@ const Navbar = () => {
       {AUTH_ITEMS.length > 0 && (
         <div className="navbar-auth">
           {AUTH_ITEMS.map((item) => (
-            <button
+            <Link
               key={item.href}
+              to={item.href}
               className={`auth-button ${item.className || ''}`}
-              onClick={() => (window.location.href = item.href)}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
       )}

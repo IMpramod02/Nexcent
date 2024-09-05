@@ -12,23 +12,23 @@ createRoot(document.getElementById('root')).render(
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/index.scss';
 import Navbar from './components/navbar/Navbar';
-import HomePage from './pages/homepage/homepage';
-import SitePage from './pages/sitepage/sitepage';
-import CaringPage from './pages/caringpage/caringpage';
+import HomePage from './pages/LandingPage/homepage/homepage.jsx';
+import CaringPage from './pages/LandingPage/caringpage/caringpage.jsx';
+import SitePage from './pages/LandingPage/sitepage/sitepage.jsx';
+
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
-      <main>
-        <h1>Hello Vite + React!</h1>
-        <p>This is a sample React app with Vite and SCSS.</p>
-        <HomePage />
-        <SitePage />
-        <CaringPage />
-      </main>
-    </div>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/service" element={<CaringPage />} />
+        <Route path="/feature" element={<SitePage />} />
+      </Routes>
+    </Router>
   );
 }
 

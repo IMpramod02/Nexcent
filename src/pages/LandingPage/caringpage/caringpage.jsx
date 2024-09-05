@@ -1,9 +1,9 @@
 //import React from 'react';
 import './CaringPage.scss';
 import { CARING_CONSTANTS } from './caringpage';
-import image1 from '../../assets/images/image1.png';
-import image2 from '../../assets/images/image2.png';
-import image3 from '../../assets/images/image3.png';
+import image1 from '../../../assets/images/image1.png';
+import image2 from '../../../assets/images/image2.png';
+import image3 from '../../../assets/images/image3.png';
 const CaringPage = () => {
   return (
     <div className="caring-page-container">
