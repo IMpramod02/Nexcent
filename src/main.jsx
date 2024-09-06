@@ -15,9 +15,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/index.scss';
 import Navbar from './components/navbar/Navbar';
-import HomePage from './pages/LandingPage/homepage/homepage.jsx';
-import CaringPage from './pages/LandingPage/caringpage/caringpage.jsx';
-import SitePage from './pages/LandingPage/sitepage/sitepage.jsx';
+import HomePage from './pages/homepage/homepage';
+/*import HomePage from './components/unlocksection/unlocksection.jsx';
+import CaringPage from './components/caresection/caringsection.jsx';
+import SitePage from './components/calendersection/calendersection.jsx';*/
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/home" element={<HomePage />} />
-        <Route path="/service" element={<CaringPage />} />
-        <Route path="/feature" element={<SitePage />} />
+        {/*<Route path="/service" element={<CaringPage />} />
+        <Route path="/feature" element={<SitePage />} />*/}
       </Routes>
     </Router>
   );

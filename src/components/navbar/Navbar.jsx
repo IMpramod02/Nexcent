@@ -11,7 +11,7 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState('');
 
   useEffect(() => {
-    setActiveItem(location.pathname); // Set the active item based on the current path
+    setActiveItem(location.pathname);
   }, [location]);
 
   return (

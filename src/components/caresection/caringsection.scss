@@ -1,6 +1,6 @@
-@import '../../../styles/index.scss';
+@import '../../styles/index.scss';
 
-.caring-page-container {
+.caring-section-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,10 +21,24 @@
     p {
       font-size: 16px;
     }
+
     .image-gallery {
       display: flex;
       justify-content: center;
       gap: 16px;
+    }
+    .card {
+      width: 317px;
+      height: 150px;
+      padding: 16px 0px 0px 0px;
+      gap: 16px;
+      border-radius: 8px;
+      background: $colorNeutralSilver;
+      margin-top: -100px;
+      position: relative;
+      z-index: 100;
+      left: 25px;
+      font-size: 15px;
     }
   }
 
@@ -37,6 +51,7 @@
       p {
         font-size: 14px;
       }
+
       .image-gallery {
         flex-direction: column;
         gap: 8px;

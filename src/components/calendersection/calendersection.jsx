@@ -15,13 +15,13 @@ const SitePage = () => {
 export default SitePage;*/
 
 //import React from 'react';
-import './SitePage.scss';
-import pana from '../../../assets/icons/pana.png';
+import './calendersection.scss';
+import pana from '../../assets/icons/pana.png';
 import { SITE_PAGE_CONSTANTS } from './constant';
 
-const SitePage = () => {
+const CalendarSection = () => {
   return (
-    <div className="sitepage-container">
+    <div className="calendar-section-container">
       <div className="left-section">
         <img
           src={pana}
@@ -40,4 +40,4 @@ const SitePage = () => {
   );
 };
 
-export default SitePage;
+export default CalendarSection;

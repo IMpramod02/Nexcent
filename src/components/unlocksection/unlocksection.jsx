@@ -1,11 +1,10 @@
-//import React from 'react';
-import './HomePage.scss';
-import mobil from '../../../assets/icons/mobil.png';
-import { HOME_PAGE_CONSTANTS } from './constant';
+import './UnlockSection.scss';
+import mobil from '../../assets/icons/mobil.png';
+import { HOME_PAGE_CONSTANTS } from './unlocksection';
 
-const HomePage = () => {
+const UnlockSection = () => {
   return (
-    <div className="homepage-container">
+    <div className="unlock-section-container">
       <div className="left-section">
         <img
           src={mobil}
@@ -24,7 +23,7 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default UnlockSection;
 
 /*import React from 'react';
 import './HomePage.scss';
