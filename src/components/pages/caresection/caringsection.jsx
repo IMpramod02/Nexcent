@@ -1,9 +1,9 @@
 import './CaringSection.scss';
 import { CARING_CONSTANTS } from './caringsection';
-import image1 from '../../assets/images/image1.png';
-import image2 from '../../assets/images/image2.png';
-import image3 from '../../assets/images/image3.png';
-import Readmore from '../../assets/icons/Readmore.png';
+import image1 from '../../../assets/images/image1.png';
+import image2 from '../../../assets/images/image2.png';
+import image3 from '../../../assets/images/image3.png';
+import Readmore from '../../../assets/icons/Readmore.png';
 
 const CaringSection = () => {
   return (

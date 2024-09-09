@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
 import { MENU_ITEMS, AUTH_ITEMS } from './constants';
-import logo from '../../assets/icons/logo.png';
-import hamburger from '../../assets/icons/hamburger.png';
+import logo from '../../../assets/icons/logo.png';
+import hamburger from '../../../assets/icons/hamburger.png';
 
 const Navbar = () => {
   const location = useLocation();
-  const [activeItem, setActiveItem] = useState('');
+  /* const [activeItem, setActiveItem] = useState('');
 
   useEffect(() => {
     setActiveItem(location.pathname);
-  }, [location]);
-
+  }, [location]);*/
+  console.log('navbar is rendered');
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -27,7 +27,7 @@ const Navbar = () => {
           <li key={item.href} className="menu-item">
             <Link
               to={item.href}
-              className={activeItem === item.href ? 'active' : ''}
+              className={location.pathname === item.href ? 'active' : ''}
             >
               {item.label}
             </Link>

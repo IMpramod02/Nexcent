@@ -16,7 +16,7 @@ export default SitePage;*/
 
 //import React from 'react';
 import './calendersection.scss';
-import pana from '../../assets/icons/pana.png';
+import pana from '../../../assets/icons/pana.png';
 import { SITE_PAGE_CONSTANTS } from './constant';
 
 const CalendarSection = () => {
