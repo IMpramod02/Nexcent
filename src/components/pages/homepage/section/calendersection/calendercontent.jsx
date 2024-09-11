@@ -15,7 +15,7 @@ const SitePage = () => {
 export default SitePage;*/
 
 //import React from 'react';
-import './calendersection.scss';
+/*import './calendersection.scss';
 import pana from '../../../assets/icons/pana.png';
 import { SITE_PAGE_CONSTANTS } from './constant';
 
@@ -37,6 +37,27 @@ const CalendarSection = () => {
         </button>
       </div>
     </div>
+  );
+};
+
+export default CalendarSection;*/
+
+import { SITE_PAGE_CONSTANTS } from './constant.js';
+import UnlockSection from '../unlocksection/unlockcontent.jsx';
+import image from '../../../../../assets/icons/pana.png';
+const CalendarSection = () => {
+  // const { heading, paragraph, buttonLabel, imageAlt } = SITE_PAGE_CONSTANTS;
+
+  return (
+    <UnlockSection
+      /* heading={heading}
+      paragraph={paragraph}
+      buttonLabel={buttonLabel}
+      imageUrl={image}
+      imageAlt={imageAlt}*/
+      {...SITE_PAGE_CONSTANTS}
+      imageUrl={image}
+    />
   );
 };
 

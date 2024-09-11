@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './styles/index.scss';
+import './styles/global.scss';
 import Navbar from './components/global/navbar/Navbar';
 import HomePage from './pages/homepage/homepage';
 

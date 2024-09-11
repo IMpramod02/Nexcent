@@ -1,3 +1,4 @@
+import pana from '../../../../../assets/icons/pana.png';
 export const SITE_PAGE_CONSTANTS = {
   heading: 'How to design your site footer like we did',
   paragraph: `To design a site footer similar to the one we created, start by ensuring
@@ -8,5 +9,6 @@ export const SITE_PAGE_CONSTANTS = {
         sure it’s responsive so it looks great on all devices. Additionally, 
         consider adding a copyright notice and any relevant legal disclaimers.`,
   buttonLabel: 'Learn more',
+  imageUrl: pana,
   imageAlt: 'Pana',
 };
