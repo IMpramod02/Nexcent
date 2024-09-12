@@ -1,4 +1,4 @@
-import mobil from '../../../../../assets/icons/mobil.png';
+/*import mobil from '../../../../../assets/icons/mobil.png';
 export const HOME_PAGE_CONSTANTS = {
   heading: 'The unseen of spending three years at Pixelgrade',
   paragraph: `Spending three years at pixel-grade detail reveals the hidden
@@ -12,4 +12,4 @@ export const HOME_PAGE_CONSTANTS = {
   buttonLabel: 'Learn more',
   imageAlt: 'Mobil',
   imageUrl: mobil,
-};
+};*/

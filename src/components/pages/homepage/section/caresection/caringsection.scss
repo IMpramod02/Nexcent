@@ -1,25 +1,24 @@
-@import '../../../../../styles//global.scss';
+@import '../../../../../styles/global.scss';
 
 .caring-section-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: $colorOnprimer;
 
   .caring-content {
     text-align: center;
     padding: 20px;
-    max-width: 600px;
+    max-width: 600px; //max width not right
     border-radius: 10px;
 
     h2 {
-      font-size: 24px;
+      @extend .text-heading;
       margin-bottom: 16px;
     }
 
     p {
-      font-size: 16px;
+      @extend .text-body2;
     }
 
     .image-gallery {
@@ -27,14 +26,15 @@
       justify-content: center;
       gap: 16px;
     }
+
     .card {
-      width: 317px;
-      height: 150px;
-      padding: 16px 0px 0px 0px;
+      width: 317px; // no that much value
+      height: 150px; // if needed
+      padding: 16px 0 0 0;
       gap: 16px;
       border-radius: 8px;
       background: $colorNeutralSilver;
-      margin-top: -100px;
+      margin-top: -100px; // values is much.
       position: relative;
       z-index: 100;
       left: 25px;
@@ -45,10 +45,12 @@
   @media (max-width: 768px) {
     .caring-content {
       h2 {
+        @extend .text-heading;
         font-size: 18px;
       }
 
       p {
+        @extend .text-body2;
         font-size: 14px;
       }
 

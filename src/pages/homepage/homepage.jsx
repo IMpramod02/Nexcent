@@ -34,9 +34,13 @@ const HomePage = () => {
 export default HomePage;*/
 
 import UnlockSection from '../../components/pages/homepage/section/unlocksection/unlocksection.jsx';
-import { HOME_PAGE_CONSTANTS } from '../../components/pages/homepage/section/unlocksection/unlocksection.js';
-import { SITE_PAGE_CONSTANTS } from '../../components/pages/homepage/section/calendersection/constant.js';
+//import { HOME_PAGE_CONSTANTS } from '../../components/pages/homepage/section/unlocksection/unlocksection.js';
+//import { SITE_PAGE_CONSTANTS } from '../../components/pages/homepage/section/calendersection/constant.js';
 import CaringSection from '../../components/pages/homepage/section/caresection/caringsection.jsx';
+import {
+  HOME_PAGE_CONSTANTS,
+  SITE_PAGE_CONSTANTS,
+} from './homepageconstant.js';
 
 const HomePage = () => {
   return (

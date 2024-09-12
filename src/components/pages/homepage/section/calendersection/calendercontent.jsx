@@ -42,7 +42,7 @@ const CalendarSection = () => {
 
 export default CalendarSection;*/
 
-import { SITE_PAGE_CONSTANTS } from './constant.js';
+/*import { SITE_PAGE_CONSTANTS } from './constant.js';
 import UnlockSection from '../unlocksection/unlockcontent.jsx';
 import image from '../../../../../assets/icons/pana.png';
 const CalendarSection = () => {
@@ -55,10 +55,12 @@ const CalendarSection = () => {
       buttonLabel={buttonLabel}
       imageUrl={image}
       imageAlt={imageAlt}*/
-      {...SITE_PAGE_CONSTANTS}
+{
+  /* {...SITE_PAGE_CONSTANTS} 
       imageUrl={image}
     />
   );
 };
 
-export default CalendarSection;
+  export default CalendarSection; */
+}

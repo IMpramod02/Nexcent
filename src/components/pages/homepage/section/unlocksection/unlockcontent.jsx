@@ -18,12 +18,3 @@ const UnlockContent = () => {
 };
 
 export default UnlockContent;*/
-
-import UnlockSection from './unlocksection.jsx';
-import { HOME_PAGE_CONSTANTS } from './unlocksection.js';
-
-const UnlockContent = () => {
-  return <UnlockSection {...HOME_PAGE_CONSTANTS} />;
-};
-
-export default UnlockContent;
