@@ -1,4 +1,4 @@
-@import '../../../../../styles//global.scss';
+/*@import '../../../../../styles//global.scss';
 
 .unlock-section-container {
   margin-top: 20px;
@@ -55,5 +55,160 @@
         display: block;
       }
     }
+  }
+}
+*/
+
+/*@import '../../../../../styles/global.scss';
+
+.unlock-section-container {
+  margin-top: 20px;
+  padding: 0px 10%;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .banner-section {
+    @extend .col-12;
+
+    /*@media (min-width: 768px) {
+      @extend .col-md-5; // 5 columns for medium screens
+    }
+
+    @media (min-width: 1024px) {
+      @extend .col-lg-4; // 4 columns for large screens
+    }*/
+
+/*.mobil-image {
+      margin-left: 8px;
+      //width: 95%;
+    }
+  }
+
+  .content-section {
+    @extend .col-12;
+
+    /* @media (min-width: 768px) {
+      @extend .col-md-7;
+    }
+
+    @media (min-width: 1024px) {
+      @extend .col-lg-8;
+    }*/
+
+/* h2 {
+      @extend .text-heading;
+      margin-bottom: 16px;
+    }
+
+    p {
+      @extend .text-body2;
+    }
+
+    .learn-more-button {
+      @extend .button;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+
+    .banner-section {
+      margin-bottom: 20px;
+
+      .mobil-image {
+        margin: 0 auto;
+      }
+    }
+
+    /*.content-section {
+      .learn-more-button {
+        margin: 0 auto;
+        display: block;
+      }*/
+
+@import '../../../../../styles/global.scss';
+
+.unlock-section-container {
+  margin-top: 20px;
+  padding: 0px 10%;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .banner-section {
+    @extend .col-12;
+
+    @media (min-width: 768px) {
+      @extend .col-md-5;
+    }
+
+    @media (min-width: 1024px) {
+      @extend .col-lg-4;
+    }
+    .mobil-image {
+      margin-left: 8px;
+      width: 100%;
+    }
+  }
+
+  .content-section {
+    @extend .col-12;
+
+    @media (min-width: 768px) {
+      @extend .col-md-7;
+    }
+
+    @media (min-width: 1024px) {
+      @extend .col-lg-8;
+    }
+
+    h2 {
+      @extend .text-heading;
+      margin-bottom: 16px;
+    }
+
+    p {
+      @extend .text-body2;
+    }
+
+    .learn-more-button {
+      @extend .button;
+    }
+  }
+
+  // Mobile-first approach, stack elements vertically for screens smaller than 768px
+  @media (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+
+    .banner-section {
+      margin-bottom: 20px;
+
+      /*.mobil-image {
+        margin: 0 auto;
+      }*/
+    }
+
+    .content-section {
+      text-align: center;
+      .learn-more-button {
+        margin: 0 auto;
+        //display: block;
+      }
+    }
+  }
+
+  // Adjust layout for larger screens
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    //flex-wrap: nowrap;
+    text-align: left;
   }
 }

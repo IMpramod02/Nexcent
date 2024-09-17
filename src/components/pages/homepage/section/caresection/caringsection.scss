@@ -9,7 +9,7 @@
   .caring-content {
     text-align: center;
     padding: 20px;
-    max-width: 600px; //max width not right
+    max-width: 34%; //max width not right
     border-radius: 10px;
 
     h2 {
@@ -28,14 +28,14 @@
     }
 
     .card {
-      width: 317px; // no that much value
-      height: 150px; // if needed
+      width: 80%; // no that much value
+      //height: 150px; // if needed
       padding: 16px 0 0 0;
       gap: 16px;
       border-radius: 8px;
       background: $colorNeutralSilver;
-      margin-top: -100px; // values is much.
-      position: relative;
+      margin-top: -30%; // values is much.
+      position: relative; // another parameter
       z-index: 100;
       left: 25px;
       font-size: 15px;
