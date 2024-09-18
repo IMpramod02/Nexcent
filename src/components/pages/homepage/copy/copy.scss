@@ -1,0 +1,40 @@
+@import '../../../../styles/./global.scss';
+
+.achivements-section-copy {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px, 144px;
+
+  .right-side {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: centre;
+    background-color: beige;
+  }
+
+  .left-side {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: centre;
+    background-color: black;
+
+    h1 {
+      @extend.text-heading;
+    }
+    .achivement-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h1 {
+        @extend.text-heading;
+        background-color: azure;
+      }
+    }
+    p {
+      @extend.text-body2;
+      color: red;
+    }
+  }
+}
