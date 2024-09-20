@@ -5,6 +5,7 @@ import {
   SITE_PAGE_CONSTANTS,
 } from './homepageconstant.js';
 import AchivementSection from '../../components/pages/homepage/achivementsection/achivementsection.jsx';
+import Footer from '../../components/pages/footer/footer.jsx';
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <UnlockSection {...SITE_PAGE_CONSTANTS} />
       <CaringSection />
       <AchivementSection />
+      <Footer />
     </main>
   );
 };

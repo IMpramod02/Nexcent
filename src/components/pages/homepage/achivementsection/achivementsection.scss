@@ -22,8 +22,8 @@
 
   .right-side {
     //flex-basis: 50%;
-    display: flex;
-    justify-content: center;
+    //display: flex;
+    //justify-content: center;
     //align-items: center;
 
     .icon-stats-grid {
@@ -52,7 +52,7 @@
         .description {
           font-size: 14px;
         }
-      }
+      } // use typography and remome unused styles
     }
   }
 
