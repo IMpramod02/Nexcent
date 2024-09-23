@@ -4,8 +4,8 @@ import {
   HOME_PAGE_CONSTANTS,
   SITE_PAGE_CONSTANTS,
 } from './homepageconstant.js';
-import AchivementSection from '../../components/pages/homepage/achivementsection/achivementsection.jsx';
-import Footer from '../../components/pages/footer/footer.jsx';
+import AchivementSection from '../../components/pages/homepage/section/achivementsection/achivementsection.jsx';
+import Footer from '../../components/global/footer/footer.jsx';
 
 const HomePage = () => {
   return (
