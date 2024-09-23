@@ -1,31 +1,17 @@
+@import '../../../../../styles/global.scss';
+
 .achivements-section {
-  //display: flex;
-  //justify-content: space-between;
   padding: 64px 144px;
 
   .left-side {
-    //flex-basis: 50%;
-
     h1 {
-      //@extend .text-heading;
-
       .text-green {
-        color: green;
+        color: $colorGreen;
       }
-    }
-
-    p {
-      //@extend .text-body2;
-      //margin-top: 16px;
     }
   }
 
   .right-side {
-    //flex-basis: 50%;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-
     .icon-stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -37,13 +23,7 @@
       align-items: center;
       gap: 12px;
 
-      /*.achivement-icon {
-        width: 40px;
-        height: auto;
-      }*/
-
       .icon-text {
-        //display: flex;
         flex-direction: column;
         .number {
           font-weight: bold;
@@ -57,13 +37,9 @@
   }
 
   @media (max-width: 1024px) {
-    //flex-direction: column;
-    //padding: 40px 20px;
-
     .left-side,
     .right-side {
       flex-basis: 100%;
-      //align-items: center;
     }
 
     .right-side {
@@ -74,8 +50,6 @@
   }
 
   @media (max-width: 768px) {
-    //padding: 20px;
-
     .right-side {
       .icon-stats-grid {
         grid-template-columns: 1fr;
