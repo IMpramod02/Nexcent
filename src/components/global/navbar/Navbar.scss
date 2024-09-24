@@ -43,7 +43,6 @@
     }
   }
 }
-
 .navbar-auth {
   display: flex;
   gap: 14px;
@@ -59,7 +58,8 @@
     border: none;
     @extend .text-body2;
 
-    &.login {
+    &.login,
+    &.language-toggle {
       color: $colorSecondary;
       background-color: $colorOnprimer;
     }

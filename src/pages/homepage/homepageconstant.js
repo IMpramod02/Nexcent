@@ -29,3 +29,17 @@ export const SITE_PAGE_CONSTANTS = {
   imageUrl: pana,
   imageAlt: 'Pana',
 };
+
+export const SITE_PAGE_CONSTANTS_ES = {
+  heading: 'Cómo diseñar el pie de página de su sitio como lo hicimos nosotros',
+  paragraph: `Para diseñar un pie de página de sitio similar al que creamos, comience por asegurarse
+        Incluye elementos esenciales como información de contacto, redes sociales.
+        enlaces y enlaces de navegación rápida. Utilice una combinación de colores consistente y
+        tipografía que se alinee con el diseño general de su sitio. Incorporar un
+        Diseño limpio con secciones claras para mejorar la legibilidad. Finalmente, haz
+        Asegúrate de que responda para que se vea genial en todos los dispositivos. Además, 
+        considere agregar un aviso de derechos de autor y cualquier exención de responsabilidad legal relevante.`,
+  buttonLabel: 'Másinformación',
+  imageUrl: pana,
+  imageAlt: 'Pana',
+};

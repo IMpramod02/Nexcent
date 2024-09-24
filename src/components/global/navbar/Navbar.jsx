@@ -1,19 +1,15 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
 import { MENU_ITEMS, AUTH_ITEMS } from './constants';
 import logo from '../../../assets/icons/logo.png';
 import hamburger from '../../../assets/icons/hamburger.png';
 
-const Navbar = () => {
+const Navbar = ({ toggleLanguage, currentLanguage }) => {
   const location = useLocation();
-  /* const [activeItem, setActiveItem] = useState('');
 
-  useEffect(() => {
-    setActiveItem(location.pathname);
-  }, [location]);*/
-  console.log('navbar is rendered');
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -34,6 +30,11 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+      {/* Language Toggle Button */}
+      <button onClick={toggleLanguage} className="language-toggle">
+        {currentLanguage === 'en' ? 'EN' : 'ES'}
+      </button>
 
       {AUTH_ITEMS.length > 0 && (
         <div className="navbar-auth">
