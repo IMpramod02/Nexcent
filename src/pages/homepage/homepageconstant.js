@@ -43,3 +43,18 @@ export const SITE_PAGE_CONSTANTS_ES = {
   imageUrl: pana,
   imageAlt: 'Pana',
 };
+
+export const HOME_PAGE_CONSTANTS_ES = {
+  heading: 'Lo invisible de pasar tres años en Pixelgrade',
+  paragraph: `Pasar tres años analizando detalles a nivel de píxeles revela lo oculto
+  complejidades del mundo digital, donde las minucias de cada píxel
+  contribuir al tejido más amplio. Es una inmersión en lo sutil.
+  danza de color y luz, descubriendo cuán aparentemente insignificante
+  Los elementos se fusionan en un todo convincente. La experiencia cultiva una
+  Ojo meticuloso para los detalles y un profundo aprecio por el arte.
+  detrás de la creación digital. Es un viaje al microcosmos que da forma
+  nuestra visual.`,
+  buttonLabel: 'Másinformación',
+  imageUrl: mobil,
+  imageAlt: 'Mobil',
+};

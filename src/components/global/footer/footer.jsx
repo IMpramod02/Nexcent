@@ -1,32 +1,33 @@
 import './footer.scss';
-import leftImage from '../../../assets/images/Company.png';
+import { FOOTER_CONSTANTS_EN, FOOTER_CONSTANTS_ES } from './footer'; // Import both language constants
 
-const footerData = [
-  {
-    title: 'Company',
-    links: ['About Us', 'Blog', 'Contact Us', 'Pricing', 'Testimonials'],
-  },
-  {
-    title: 'Support',
-    links: [
-      'Help Center',
-      'Terms of Service',
-      'Legal',
-      'Privacy Policy',
-      'Status',
-    ],
-  },
-];
-const Footer = () => {
+const Footer = ({ language }) => {
+  // Choose constants based on the selected language
+  const footerConstants =
+    language === 'es' ? FOOTER_CONSTANTS_ES : FOOTER_CONSTANTS_EN;
+
+  const {
+    footerLeftImage,
+    sections,
+    subscriptionTitle,
+    subscriptionPlaceholder,
+  } = footerConstants; // Destructure the constants based on language
+
   return (
     <footer className="footer-container">
       <div className="row">
+        {/* Left section of the footer with the image */}
         <div className="col-12 col-md-4 footer-left">
-          <img src={leftImage} alt="Footer Logo" className="footer-image" />
+          <img
+            src={footerLeftImage}
+            alt="Footer Logo"
+            className="footer-image"
+          />
         </div>
 
+        {/* Center section with footer links */}
         <div className="col-12 col-md-4 col-lg-4 footer-center row">
-          {footerData.map((section, index) => (
+          {sections.map((section, index) => (
             <div key={index} className="col-6 col-md-6 footer-column">
               <h4>{section.title}</h4>
               <ul>
@@ -40,12 +41,13 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* Right section with subscription form */}
         <div className="col-12 col-lg-4 footer-right">
-          <h4>Stay up to date</h4>
+          <h4>{subscriptionTitle}</h4>
           <div className="subscription-form">
             <input
               type="email"
-              placeholder="Your email address"
+              placeholder={subscriptionPlaceholder}
               className="subscription-input"
             />
           </div>
