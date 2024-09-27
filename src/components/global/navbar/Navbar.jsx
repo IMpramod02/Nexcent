@@ -130,11 +130,27 @@ import {
 import logo from '../../../assets/icons/logo.png';
 import hamburger from '../../../assets/icons/hamburger.png';
 
+const getMenuItems = (language) => {
+  const languageMap = {
+    en: MENU_ITEMS_EN,
+    es: MENU_ITEMS_ES,
+  };
+  return languageMap[language] || MENU_ITEMS_EN;
+};
+
+const getAuthItems = (language) => {
+  const languageMap = {
+    en: AUTH_ITEMS_EN,
+    es: AUTH_ITEMS_ES,
+  };
+  return languageMap[language] || AUTH_ITEMS_EN;
+};
+
 const Navbar = ({ toggleLanguage, currentLanguage }) => {
   const location = useLocation();
 
-  const MENU_ITEMS = currentLanguage === 'es' ? MENU_ITEMS_ES : MENU_ITEMS_EN;
-  const AUTH_ITEMS = currentLanguage === 'es' ? AUTH_ITEMS_ES : AUTH_ITEMS_EN;
+  const MENU_ITEMS = getMenuItems(currentLanguage);
+  const AUTH_ITEMS = getAuthItems(currentLanguage);
 
   return (
     <nav className="navbar">

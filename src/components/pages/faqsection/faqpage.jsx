@@ -1,10 +1,20 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './FAQPage.scss';
 import { FAQ_CONSTANTS_EN, FAQ_CONSTANTS_ES } from './faqconstant';
 
+const getFAQConstants = (language) => {
+  const languageMap = {
+    en: FAQ_CONSTANTS_EN,
+    es: FAQ_CONSTANTS_ES,
+  };
+
+  return languageMap[language] || FAQ_CONSTANTS_EN;
+};
+
 const FAQPage = ({ language }) => {
-  const faqData = language === 'en' ? FAQ_CONSTANTS_EN : FAQ_CONSTANTS_ES;
+  const faqData = getFAQConstants(language);
 
   return (
     <div className="faq-page-container">

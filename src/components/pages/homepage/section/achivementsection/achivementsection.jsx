@@ -2,10 +2,10 @@
 /* eslint-disable no-unused-vars */
 // import React, { useState, useEffect } from 'react';
 // import './achivementsection.scss';
-// import Icon1 from '../../../../../assets/icons/icon 1.png';
-// import Icon2 from '../../../../../assets/icons/icon 2.png';
-// import Icon3 from '../../../../../assets/icons/icon 3.png';
-// import Icon4 from '../../../../../assets/icons/icon 4.png';
+// import {
+//   ACHIEVEMENTS_CONSTANTS,
+//   ACHIEVEMENTS_CONSTANTS_ES,
+// } from './achivementsection';
 
 // const fetchAchievementsData = async () => {
 //   const response = await fetch('http://localhost:5000/achivements');
@@ -13,7 +13,7 @@
 //   return data;
 // };
 
-// const AchivementsSection = () => {
+// const AchivementsSection = ({ language }) => {
 //   const [achievementsData, setAchievementsData] = useState({
 //     members: 0,
 //     clubs: 0,
@@ -30,18 +30,29 @@
 //     getData();
 //   }, []);
 
+//   const constants =
+//     language === 'en' ? ACHIEVEMENTS_CONSTANTS : ACHIEVEMENTS_CONSTANTS_ES; //avoid using ternary statement it's not scalable
+
 //   const icons = [
-//     { imgSrc: Icon1, number: achievementsData.members, description: 'Members' },
-//     { imgSrc: Icon2, number: achievementsData.clubs, description: 'Clubs' },
 //     {
-//       imgSrc: Icon3,
-//       number: achievementsData['event bookings'],
-//       description: 'Event Bookings',
+//       imgSrc: constants.icons[0].imgSrc,
+//       number: achievementsData.members,
+//       description: constants.icons[0].description,
 //     },
 //     {
-//       imgSrc: Icon4,
+//       imgSrc: constants.icons[1].imgSrc,
+//       number: achievementsData.clubs,
+//       description: constants.icons[1].description,
+//     },
+//     {
+//       imgSrc: constants.icons[2].imgSrc,
+//       number: achievementsData['event bookings'],
+//       description: constants.icons[2].description,
+//     },
+//     {
+//       imgSrc: constants.icons[3].imgSrc,
 //       number: achievementsData.payments,
-//       description: 'Payments',
+//       description: constants.icons[3].description,
 //     },
 //   ];
 
@@ -49,11 +60,11 @@
 //     <section className="achivements-section row">
 //       <div className="col-6 left-side">
 //         <h1>
-//           Helping a local
+//           {constants.title}
 //           <br />
-//           <span className="text-green"> business reinvent itself</span>
+//           <span className="text-green">{constants.subtitle}</span>
 //         </h1>
-//         <p>We reached here with our hard work and dedication</p>
+//         <p>{constants.description}</p>
 //       </div>
 
 //       <div className="col-6 right-side">
@@ -92,6 +103,15 @@ const fetchAchievementsData = async () => {
   return data;
 };
 
+const getLanguageConstants = (language) => {
+  const languageMap = {
+    en: ACHIEVEMENTS_CONSTANTS,
+    es: ACHIEVEMENTS_CONSTANTS_ES,
+  };
+
+  return languageMap[language] || ACHIEVEMENTS_CONSTANTS;
+};
+
 const AchivementsSection = ({ language }) => {
   const [achievementsData, setAchievementsData] = useState({
     members: 0,
@@ -109,8 +129,7 @@ const AchivementsSection = ({ language }) => {
     getData();
   }, []);
 
-  const constants =
-    language === 'en' ? ACHIEVEMENTS_CONSTANTS : ACHIEVEMENTS_CONSTANTS_ES; //avoid using ternary statement it's not scalable
+  const constants = getLanguageConstants(language);
 
   const icons = [
     {

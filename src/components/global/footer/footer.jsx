@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 import './footer.scss';
-import { FOOTER_CONSTANTS_EN, FOOTER_CONSTANTS_ES } from './footer'; // Import both language constants
+import { FOOTER_CONSTANTS_EN, FOOTER_CONSTANTS_ES } from './footer';
 
 const Footer = ({ language }) => {
-  // Choose constants based on the selected language
   const footerConstants =
     language === 'es' ? FOOTER_CONSTANTS_ES : FOOTER_CONSTANTS_EN;
 
@@ -11,12 +11,11 @@ const Footer = ({ language }) => {
     sections,
     subscriptionTitle,
     subscriptionPlaceholder,
-  } = footerConstants; // Destructure the constants based on language
+  } = footerConstants;
 
   return (
     <footer className="footer-container">
       <div className="row">
-        {/* Left section of the footer with the image */}
         <div className="col-12 col-md-4 footer-left">
           <img
             src={footerLeftImage}
@@ -25,7 +24,6 @@ const Footer = ({ language }) => {
           />
         </div>
 
-        {/* Center section with footer links */}
         <div className="col-12 col-md-4 col-lg-4 footer-center row">
           {sections.map((section, index) => (
             <div key={index} className="col-6 col-md-6 footer-column">
@@ -41,7 +39,6 @@ const Footer = ({ language }) => {
           ))}
         </div>
 
-        {/* Right section with subscription form */}
         <div className="col-12 col-lg-4 footer-right">
           <h4>{subscriptionTitle}</h4>
           <div className="subscription-form">
