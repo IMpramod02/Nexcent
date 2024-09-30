@@ -90,17 +90,31 @@
 
 // export default AchivementsSection;
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './achivementsection.scss';
 import {
   ACHIEVEMENTS_CONSTANTS,
   ACHIEVEMENTS_CONSTANTS_ES,
 } from './achivementsection';
+import LanguageContext from '../../../../../context/LanguageContext';
 
 const fetchAchievementsData = async () => {
-  const response = await fetch('http://localhost:5000/achivements');
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch('http://localhost:5000/achivements');
+    if (!response.ok) {
+      throw new Error('Failed to fetch achievements data');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching achievements data:', error);
+    return {
+      members: 0,
+      clubs: 0,
+      'event bookings': 0,
+      payments: 0,
+    };
+  }
 };
 
 const getLanguageConstants = (language) => {
@@ -112,7 +126,9 @@ const getLanguageConstants = (language) => {
   return languageMap[language] || ACHIEVEMENTS_CONSTANTS;
 };
 
-const AchivementsSection = ({ language }) => {
+const AchivementsSection = () => {
+  const { language } = useContext(LanguageContext);
+
   const [achievementsData, setAchievementsData] = useState({
     members: 0,
     clubs: 0,

@@ -1,8 +1,12 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React, { useContext } from 'react';
 import './footer.scss';
 import { FOOTER_CONSTANTS_EN, FOOTER_CONSTANTS_ES } from './footer';
+import LanguageContext from '../../../context/LanguageContext';
 
-const Footer = ({ language }) => {
+const Footer = () => {
+  const { language } = useContext(LanguageContext);
+
   const footerConstants =
     language === 'es' ? FOOTER_CONSTANTS_ES : FOOTER_CONSTANTS_EN;
 

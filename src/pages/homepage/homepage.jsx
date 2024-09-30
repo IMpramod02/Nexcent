@@ -73,7 +73,37 @@
 
 // export default HomePage;
 
-import React from 'react';
+// import React from 'react';
+// import UnlockSection from '../../components/pages/homepage/section/unlocksection/unlocksection.jsx';
+// import CaringSection from '../../components/pages/homepage/section/caresection/caringsection.jsx';
+// import AchivementSection from '../../components/pages/homepage/section/achivementsection/achivementsection.jsx';
+// import Footer from '../../components/global/footer/footer.jsx';
+// import {
+//   HOME_PAGE_CONSTANTS,
+//   HOME_PAGE_CONSTANTS_ES,
+//   SITE_PAGE_CONSTANTS,
+//   SITE_PAGE_CONSTANTS_ES,
+// } from './homepageconstant.js';
+
+// const HomePage = ({ language }) => {
+//   const homeConstants =
+//     language === 'en' ? HOME_PAGE_CONSTANTS : HOME_PAGE_CONSTANTS_ES;
+//   const siteConstants =
+//     language === 'en' ? SITE_PAGE_CONSTANTS : SITE_PAGE_CONSTANTS_ES;
+
+//   return (
+//     <>
+//       <UnlockSection {...homeConstants} />
+//       <UnlockSection {...siteConstants} />
+//       <CaringSection language={language} />{' '}
+//       <AchivementSection language={language} /> <Footer language={language} />
+//     </>
+//   );
+// };
+
+// export default HomePage;
+
+import React, { useContext } from 'react';
 import UnlockSection from '../../components/pages/homepage/section/unlocksection/unlocksection.jsx';
 import CaringSection from '../../components/pages/homepage/section/caresection/caringsection.jsx';
 import AchivementSection from '../../components/pages/homepage/section/achivementsection/achivementsection.jsx';
@@ -84,8 +114,10 @@ import {
   SITE_PAGE_CONSTANTS,
   SITE_PAGE_CONSTANTS_ES,
 } from './homepageconstant.js';
+import LanguageContext from '../../context/LanguageContext.jsx';
 
-const HomePage = ({ language }) => {
+const HomePage = () => {
+  const { language } = useContext(LanguageContext);
   const homeConstants =
     language === 'en' ? HOME_PAGE_CONSTANTS : HOME_PAGE_CONSTANTS_ES;
   const siteConstants =
@@ -95,8 +127,9 @@ const HomePage = ({ language }) => {
     <>
       <UnlockSection {...homeConstants} />
       <UnlockSection {...siteConstants} />
-      <CaringSection language={language} />{' '}
-      <AchivementSection language={language} /> <Footer language={language} />
+      <CaringSection />
+      <AchivementSection />
+      <Footer />
     </>
   );
 };

@@ -118,7 +118,89 @@
 
 // export default Navbar;
 
-import React from 'react';
+// import React from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import './Navbar.scss';
+// import {
+//   MENU_ITEMS_EN,
+//   MENU_ITEMS_ES,
+//   AUTH_ITEMS_EN,
+//   AUTH_ITEMS_ES,
+// } from './constants';
+// import logo from '../../../assets/icons/logo.png';
+// import hamburger from '../../../assets/icons/hamburger.png';
+
+// const getMenuItems = (language) => {
+//   const languageMap = {
+//     en: MENU_ITEMS_EN,
+//     es: MENU_ITEMS_ES,
+//   };
+//   return languageMap[language] || MENU_ITEMS_EN;
+// };
+
+// const getAuthItems = (language) => {
+//   const languageMap = {
+//     en: AUTH_ITEMS_EN,
+//     es: AUTH_ITEMS_ES,
+//   };
+//   return languageMap[language] || AUTH_ITEMS_EN;
+// };
+
+// const Navbar = ({ toggleLanguage, currentLanguage }) => {
+//   const location = useLocation();
+
+//   const MENU_ITEMS = getMenuItems(currentLanguage);
+//   const AUTH_ITEMS = getAuthItems(currentLanguage);
+
+//   return (
+//     <nav className="navbar">
+//       <div className="navbar-logo">
+//         <img src={logo} alt="Nexcent Logo" className="logo-image" />
+//       </div>
+
+//       <img src={hamburger} alt="Hamburger Icon" className="hamburger-icon" />
+
+//       <ul className="navbar-menu">
+//         {MENU_ITEMS.map((item) => (
+//           <li key={item.href} className="menu-item">
+//             <Link
+//               to={`/${currentLanguage}${item.href}`}
+//               className={
+//                 location.pathname === `/${currentLanguage}${item.href}`
+//                   ? 'active'
+//                   : ''
+//               }
+//             >
+//               {item.label}
+//             </Link>
+//           </li>
+//         ))}
+//       </ul>
+
+//       <button onClick={toggleLanguage} className="language-toggle">
+//         {currentLanguage === 'en' ? 'EN' : 'ES'}
+//       </button>
+
+//       {AUTH_ITEMS.length > 0 && (
+//         <div className="navbar-auth">
+//           {AUTH_ITEMS.map((item) => (
+//             <Link
+//               key={item.href}
+//               to={`/${currentLanguage}${item.href}`}
+//               className={`auth-button ${item.className || ''}`}
+//             >
+//               {item.label}
+//             </Link>
+//           ))}
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
 import {
@@ -127,30 +209,26 @@ import {
   AUTH_ITEMS_EN,
   AUTH_ITEMS_ES,
 } from './constants';
+import LanguageContext from '../../../context/LanguageContext';
 import logo from '../../../assets/icons/logo.png';
 import hamburger from '../../../assets/icons/hamburger.png';
 
 const getMenuItems = (language) => {
-  const languageMap = {
-    en: MENU_ITEMS_EN,
-    es: MENU_ITEMS_ES,
-  };
+  const languageMap = { en: MENU_ITEMS_EN, es: MENU_ITEMS_ES };
   return languageMap[language] || MENU_ITEMS_EN;
 };
 
 const getAuthItems = (language) => {
-  const languageMap = {
-    en: AUTH_ITEMS_EN,
-    es: AUTH_ITEMS_ES,
-  };
+  const languageMap = { en: AUTH_ITEMS_EN, es: AUTH_ITEMS_ES };
   return languageMap[language] || AUTH_ITEMS_EN;
 };
 
-const Navbar = ({ toggleLanguage, currentLanguage }) => {
+const Navbar = () => {
+  const { language, toggleLanguage } = useContext(LanguageContext);
   const location = useLocation();
 
-  const MENU_ITEMS = getMenuItems(currentLanguage);
-  const AUTH_ITEMS = getAuthItems(currentLanguage);
+  const MENU_ITEMS = getMenuItems(language);
+  const AUTH_ITEMS = getAuthItems(language);
 
   return (
     <nav className="navbar">
@@ -164,11 +242,9 @@ const Navbar = ({ toggleLanguage, currentLanguage }) => {
         {MENU_ITEMS.map((item) => (
           <li key={item.href} className="menu-item">
             <Link
-              to={`/${currentLanguage}${item.href}`}
+              to={`/${language}${item.href}`}
               className={
-                location.pathname === `/${currentLanguage}${item.href}`
-                  ? 'active'
-                  : ''
+                location.pathname === `/${language}${item.href}` ? 'active' : ''
               }
             >
               {item.label}
@@ -178,7 +254,7 @@ const Navbar = ({ toggleLanguage, currentLanguage }) => {
       </ul>
 
       <button onClick={toggleLanguage} className="language-toggle">
-        {currentLanguage === 'en' ? 'EN' : 'ES'}
+        {language === 'en' ? 'EN' : 'ES'}
       </button>
 
       {AUTH_ITEMS.length > 0 && (
@@ -186,7 +262,7 @@ const Navbar = ({ toggleLanguage, currentLanguage }) => {
           {AUTH_ITEMS.map((item) => (
             <Link
               key={item.href}
-              to={`/${currentLanguage}${item.href}`}
+              to={`/${language}${item.href}`}
               className={`auth-button ${item.className || ''}`}
             >
               {item.label}
