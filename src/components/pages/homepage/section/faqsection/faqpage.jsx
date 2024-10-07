@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 // import React from 'react';
 // import './FAQPage.scss';
 // import { FAQ_CONSTANTS_EN, FAQ_CONSTANTS_ES } from './faqconstant';
@@ -39,12 +38,13 @@ import { FAQ_CONSTANTS_EN, FAQ_CONSTANTS_ES } from './faqconstant';
 import LanguageContext from '../../../../../context/LanguageContext';
 
 const getFAQConstants = (language) => {
-  const languageMap = { en: FAQ_CONSTANTS_EN, es: FAQ_CONSTANTS_ES };
-  return languageMap[language] || FAQ_CONSTANTS_EN;
+  //keep this in constantfileiteslf
+  const languageMap = { en: FAQ_CONSTANTS_EN, es: FAQ_CONSTANTS_ES }; // in constant itself
+  return languageMap[language] || FAQ_CONSTANTS_EN; //  instead of this use ??
 };
 
 const FAQPage = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext); // try to full it from path params i.e navigation lib itself
   const faqData = getFAQConstants(language);
 
   return (

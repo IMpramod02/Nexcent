@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // import React, { useState } from 'react';
 // import UnlockSection from '../../components/pages/homepage/section/unlocksection/unlocksection.jsx';
@@ -115,6 +114,7 @@ import {
   SITE_PAGE_CONSTANTS_ES,
 } from './homepageconstant.js';
 import LanguageContext from '../../context/LanguageContext.jsx';
+import { Outlet } from 'react-router-dom';
 
 const HomePage = () => {
   const { language } = useContext(LanguageContext);
@@ -125,6 +125,7 @@ const HomePage = () => {
 
   return (
     <>
+      <Outlet />
       <UnlockSection {...homeConstants} />
       <UnlockSection {...siteConstants} />
       <CaringSection />

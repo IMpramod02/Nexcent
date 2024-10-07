@@ -26,7 +26,7 @@ export const LanguageProvider = ({ children }) => {
     } else {
       navigate('/en/home');
     }
-  }, [location.pathname, navigate]);
+  }, [location.pathname, navigate]); // ideally have a single source of truth.  todo: remove navigation. as a dependency.
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage }}>

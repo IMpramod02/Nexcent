@@ -1,0 +1,42 @@
+{
+  "achivements": {
+    "members": 2245341,
+    "clubs": 46328,
+    "event bookings": 82867,
+    "payments": 1926436
+  },
+  "users": [
+    {
+      "username": "santhosh",
+      "password": "test123",
+      "fullname": "santhosh",
+      "id": "e0442a1f-9b15-49da-8ebd-8e0b25a96913",
+      "age": "10-10-2000"
+    },
+    {
+      "username": "xyz",
+      "password": "67t6yughb",
+      "id": "7bda5974-9a6e-4080-8fff-75fbff9edd7a"
+    },
+    {
+      "username": "erfgbhn",
+      "password": "edfgbhn",
+      "id": "3d436cc2-a304-42f3-bf25-9dda7f26e507"
+    },
+    {
+      "username": "dfgbn",
+      "password": "fgbnm",
+      "id": "dd3663dd-288c-4c40-8c68-4d902d871409"
+    },
+    {
+      "username": "erfghnm",
+      "password": "vghui",
+      "id": "efaf9cff-44f9-444e-86db-626bc4fe6545"
+    },
+    {
+      "username": "23456y7u",
+      "password": "34567yu",
+      "id": "ac77e33d-c8ff-4f89-b530-5778bcdcc2d5"
+    }
+  ]
+}

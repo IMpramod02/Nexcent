@@ -1,0 +1,8 @@
+{
+    "port": 5000,
+    "watch": true,
+    "delay": 500,
+    "middlewares": [
+        "middleware.js"
+    ]
+}
