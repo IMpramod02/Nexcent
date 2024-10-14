@@ -279,6 +279,177 @@
 //   </div>
 // );
 
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   Navigate,
+//   Outlet,
+// } from 'react-router-dom';
+// import './styles/global.scss';
+// import Navbar from './components/global/navbar/Navbar';
+// import HomePage from './pages/homepage/homepage';
+// import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
+// import SignUpForm from './forms/signupform/signupform';
+// import { LanguageProvider } from './context/LanguageContext';
+
+// function App() {
+//   return (
+//     <Router>
+//       <LanguageProvider>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/:lang" element={<MainLayout />}>
+//             <Route path="home" element={<HomePage />}>
+//               <Route index element={<></>} />
+//               <Route path="signup" element={<SignUpForm />} />
+//             </Route>
+//             <Route path="faq" element={<FAQPage />} />
+//           </Route>
+//           <Route path="/" element={<Navigate to="/en/home" />} />
+//         </Routes>
+//       </LanguageProvider>
+//     </Router>
+//   );
+// }
+
+// const MainLayout = () => (
+//   <div>
+//     <Outlet />{' '}
+//   </div>
+// );
+
+// const HomePageLayout = () => (
+//   <div>
+//     <Outlet />
+//   </div>
+// );
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+// export default App;
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   Navigate,
+//   Outlet,
+// } from 'react-router-dom';
+// import './styles/global.scss';
+// import Navbar from './components/global/navbar/Navbar';
+// import HomePage from './pages/homepage/homepage';
+// import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
+// import SignUpStepOne from './forms/signupform/signupform';
+// import SignUpStepTwo from './forms/signupform/SignUpFormStepTwo';
+// import { LanguageProvider } from './context/LanguageContext';
+
+// function App() {
+//   return (
+//     <Router>
+//       <LanguageProvider>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/:lang" element={<MainLayout />}>
+//             <Route path="home" element={<HomePage />} />
+//             <Route path="faq" element={<FAQPage />} />
+//             {/* Define the signup route with child routes */}
+//             <Route path="signup" element={<SignUpLayout />}>
+//               {/* Child routes for step 1 and step 2 */}
+//               <Route path="step1" element={<SignUpStepOne />} />
+//               <Route path="step2" element={<SignUpStepTwo />} />
+//             </Route>
+//           </Route>
+//           <Route path="/" element={<Navigate to="/en/home" />} />
+//         </Routes>
+//       </LanguageProvider>
+//     </Router>
+//   );
+// }
+
+// const MainLayout = () => (
+//   <div>
+//     <Outlet /> {/* This renders child routes */}
+//   </div>
+// );
+
+// const SignUpLayout = () => (
+//   <div>
+//     <h2>Sign Up</h2>
+//     <Outlet /> {/* Renders either Step 1 or Step 2 depending on the route */}
+//   </div>
+// );
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+
+// export default App;
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   Navigate,
+//   Outlet,
+// } from 'react-router-dom';
+// import './styles/global.scss';
+// import Navbar from './components/global/navbar/Navbar';
+// import HomePage from './pages/homepage/homepage';
+// import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
+// import SignUpForm from './forms/signupform/signupform';
+// import SignUpFormStepTwo from './forms/signupform/SignUpFormStepTwo';
+// import { LanguageProvider } from './context/LanguageContext';
+
+// function App() {
+//   return (
+//     <Router>
+//       <LanguageProvider>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/:lang" element={<MainLayout />}>
+//             <Route path="home" element={<HomePage />} />
+
+//             {/* Define nested routes for signup */}
+//             <Route path="signup" element={<SignUpForm />} />
+//             <Route path="signup/step2" element={<SignUpFormStepTwo />} />
+
+//             <Route path="faq" element={<FAQPage />} />
+//           </Route>
+
+//           {/* Default route */}
+//           <Route path="/" element={<Navigate to="/en/home" />} />
+//         </Routes>
+//       </LanguageProvider>
+//     </Router>
+//   );
+// }
+
+// const MainLayout = () => (
+//   <div>
+//     <Outlet />{' '}
+//   </div>
+// );
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+
+// export default App;
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -293,6 +464,7 @@ import Navbar from './components/global/navbar/Navbar';
 import HomePage from './pages/homepage/homepage';
 import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
 import SignUpForm from './forms/signupform/signupform';
+import SignUpFormStepTwo from './forms/signupform/SignUpFormStepTwo';
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -303,11 +475,12 @@ function App() {
         <Routes>
           <Route path="/:lang" element={<MainLayout />}>
             <Route path="home" element={<HomePage />}>
-              <Route index element={<></>} />
               <Route path="signup" element={<SignUpForm />} />
+              <Route path="signup/step2" element={<SignUpFormStepTwo />} />
             </Route>
             <Route path="faq" element={<FAQPage />} />
           </Route>
+
           <Route path="/" element={<Navigate to="/en/home" />} />
         </Routes>
       </LanguageProvider>
@@ -316,12 +489,6 @@ function App() {
 }
 
 const MainLayout = () => (
-  <div>
-    <Outlet />{' '}
-  </div>
-);
-
-const HomePageLayout = () => (
   <div>
     <Outlet />
   </div>
@@ -332,4 +499,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );
+
 export default App;
