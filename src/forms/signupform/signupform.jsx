@@ -37,7 +37,9 @@
 //         return;
 //       }
 
-//       navigate('/en/home/signup/step2');
+//       const token = result.token;
+
+//       navigate('/en/home/signup/step2', { state: { token } });
 //     } catch (err) {
 //       console.log('Error occurred:', err);
 //       setErrorMessage('Username is already taken.');
@@ -121,20 +123,21 @@ const SignUpForm = () => {
       const result = await response.json();
 
       if (!result.isSuccess) {
-        if (result.message === 'Username is already taken') {
-          setErrorMessage('Username is already taken.');
-        } else {
-          setErrorMessage('Username is already taken.');
-        }
+        setErrorMessage(result.message || 'Error during signup.');
         return;
       }
 
+      // const { token, userId } = result;
       const token = result.token;
+      const userId = result.userId;
 
-      navigate('/en/home/signup/step2', { state: { token } });
+      console.log('Token:', token);
+      console.log('UserId:', userId);
+
+      navigate('/en/home/signup/step2', { state: { token, userId } });
     } catch (err) {
       console.log('Error occurred:', err);
-      setErrorMessage('Username is already taken.');
+      setErrorMessage('An error occurred during signup.');
     }
   };
 
