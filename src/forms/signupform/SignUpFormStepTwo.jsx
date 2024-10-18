@@ -270,6 +270,8 @@ const SignUpFormTwo = () => {
   const [token, setToken] = useState('');
   const [userId, setUserId] = useState('');
 
+  // if (!)
+
   useEffect(() => {
     console.log('Location state:', location.state);
 
@@ -292,7 +294,7 @@ const SignUpFormTwo = () => {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
+          // Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           fullname,

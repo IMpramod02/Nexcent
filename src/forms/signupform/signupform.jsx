@@ -105,6 +105,8 @@ const SignUpForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
+  
+
   const handleNextStep = async (e) => {
     e.preventDefault();
 
@@ -127,9 +129,9 @@ const SignUpForm = () => {
         return;
       }
 
-      // const { token, userId } = result;
-      const token = result.token;
-      const userId = result.userId;
+      const { token, id: userId } = result;
+      // const token = result.token;
+      // const userId = result.id;
 
       console.log('Token:', token);
       console.log('UserId:', userId);
