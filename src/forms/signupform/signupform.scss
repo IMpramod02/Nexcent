@@ -186,72 +186,74 @@
 //   text-align: center; /* Center the error message */
 // }
 
-/* Adjust the modal-overlay to be positioned relative to the signup button */
 .modal-container {
-  position: relative; /* Allows modal to be positioned relative to the button */
+  position: absolute;
 }
 
 .modal-overlay {
-  position: absolute; /* Position modal absolutely to the signup button */
-  top: calc(100% + 10px); /* Position it just below the signup button */
-  right: 0; /* Align to the right of the button */
-  width: 400px; /* Control modal width */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-  z-index: 1000;
+  position: absolute;
+  // top: calc(100% + 10px);
+  // right: 0; /* Align to the right of the button */
+  // width: 400px;
+  top: 90px;
+  right: 80px;
+  // background-color: rgba(0, 0, 0, 0.5);
+  // z-index: 1000;
 }
 
 .signup-form {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 100%; /* Full width of the modal overlay */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid #28a745; /* Green border */
-  margin-top: 0; /* No margin, as we're already positioning it below */
+  width: 100%;
+  // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #28a745;
+  // margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .signup-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  // text-align: center;
+  // margin-bottom: 20px;
   font-size: 32px;
   color: #333;
 }
 
 .form-group {
-  width: 100%;
+  // width: 100%;
   margin-bottom: 20px;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  font-size: 16px;
-  text-align: center;
+  // font-size: 16px;
+  // text-align: center;
 }
 
 .input-icon {
   position: relative;
-  width: 100%;
+  // width: 76%;
 }
 
 .input-icon input {
-  width: 100%;
+  // width: 100%;
   padding: 10px;
   padding-right: 35px; /* Space for the icon */
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  width: 76%;
+  // border-radius: 4px;
+  // box-sizing: border-box;
 }
 
 .input-icon .icon {
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
+  top: 40%;
+  // transform: translateY(-50%);
+  // color: #888;
 }
 
 .submit-button {
@@ -260,7 +262,6 @@ label {
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   width: 100%;
   font-size: 18px;
 }

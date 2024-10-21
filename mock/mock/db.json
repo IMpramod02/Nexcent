@@ -150,6 +150,24 @@
       "fullname": "Roy",
       "dob": "2024-10-01",
       "email": "yut@gmail.com"
+    },
+    {
+      "username": "joyut",
+      "password": "no79",
+      "id": "f99f9e5b-0464-4759-b8d7-00ebe35b26b4",
+      "fullname": "Joy fernandes",
+      "dob": "2024-08-02",
+      "email": "yiy@gmail.com"
+    },
+    {
+      "username": "gfdcxvhz",
+      "password": "ewyhgdsavjnm",
+      "id": "54515c80-1b5f-4099-9f56-889c3df299bc"
+    },
+    {
+      "username": "nobel",
+      "password": "no90",
+      "id": "1199106b-c6a4-420e-ac82-0aaedabc8394"
     }
   ]
 }
