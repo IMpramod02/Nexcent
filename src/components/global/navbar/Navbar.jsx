@@ -81,9 +81,15 @@ const Navbar = () => {
                 key={item.href}
                 href="/#"
                 className={`auth-button ${item.className || ''}`}
-                onClick={
-                  item.label === 'Signup' ? handleSignUpClick : undefined
-                }
+                onClick={(e) => {
+                  if (item.label === 'Login') {
+                    e.preventDefault();
+                    console.log('Login clicked');
+                    // handleLoginClick(); // Attach Login handler
+                  } else if (item.label === 'Signup') {
+                    handleSignUpClick(e); // Attach Signup handler
+                  }
+                }}
               >
                 {item.label}
               </a>
