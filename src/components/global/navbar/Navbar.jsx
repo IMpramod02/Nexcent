@@ -11,7 +11,8 @@ import {
 import LanguageContext from '../../../context/LanguageContext';
 import logo from '../../../assets/icons/logo.png';
 import hamburger from '../../../assets/icons/hamburger.png';
-import SignUpForm from '../../../forms/signupform/signupform'; // Import the form
+import SignUpForm from '../../../forms/signupform/signupform';
+import LoginForm from '../../../forms/loginform/loginform';
 
 const getMenuItems = (language) => {
   const languageMap = { en: MENU_ITEMS_EN, es: MENU_ITEMS_ES };
@@ -28,6 +29,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [showSignUpForm, setShowSignUpForm] = useState(false); // State for showing modal
+  const [showLoginForm, setShowLoginForm] = useState(false);
 
   const MENU_ITEMS = getMenuItems(language);
   const AUTH_ITEMS = getAuthItems(language);
@@ -38,10 +40,22 @@ const Navbar = () => {
     navigate('/en/home/signup');
     // setShowSignUpForm(true); // Show the signup modal
   };
+  // Handle opening the login modal
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    // console.log('login clicked');
+    navigate('/en/home/login');
+    // setShowLoginForm(true);
+  };
 
   // Close the signup modal
   const handleCloseSignUpForm = () => {
-    setShowSignUpForm(false); // Close the modal when signup is done
+    setShowSignUpForm(false);
+  };
+
+  // Close the login modal
+  const handleCloseLoginForm = () => {
+    setShowLoginForm(false);
   };
 
   return (
@@ -83,9 +97,9 @@ const Navbar = () => {
                 className={`auth-button ${item.className || ''}`}
                 onClick={(e) => {
                   if (item.label === 'Login') {
-                    e.preventDefault();
-                    console.log('Login clicked');
-                    // handleLoginClick(); // Attach Login handler
+                    // e.preventDefault();
+                    // console.log('Login clicked');
+                    handleLoginClick(e); // Attach Login handler
                   } else if (item.label === 'Signup') {
                     handleSignUpClick(e); // Attach Signup handler
                   }
@@ -99,11 +113,12 @@ const Navbar = () => {
       </nav>
 
       {/* Wrap modal overlay in a container for relative positioning */}
-      {/* {showSignUpForm && (
+      {/* {showLoginForm && (
         <div className="modal-container">
           {' '}
           <div className="modal-overlay">
             <SignUpForm onClose={handleCloseSignUpForm} />
+            Hello Login form
           </div>
         </div>
       )} */}

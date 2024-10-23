@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './LoginForm.scss';
-import FaEnvelope from '../../../assets/icons/FaUser.png';
-import FaEye from '../../../assets/icons/FaEye.png';
+import FaEnvelope from '../../assets/icons/FaEye.png';
+import FaEye from '../../assets/icons/FaUser.png';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');

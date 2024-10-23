@@ -14,6 +14,7 @@ import HomePage from './pages/homepage/homepage';
 import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
 import SignUpForm from './forms/signupform/signupform';
 import SignUpFormStepTwo from './forms/signupform/SignUpFormStepTwo';
+import LoginForm from './forms/loginform/loginform';
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="home" element={<HomePage />}>
               <Route path="signup" element={<SignUpForm />} />
               <Route path="signup/step2" element={<SignUpFormStepTwo />} />
+              <Route path="login" element={<LoginForm />} />
             </Route>
             <Route path="faq" element={<FAQPage />} />
           </Route>
