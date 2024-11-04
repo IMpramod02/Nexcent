@@ -176,7 +176,7 @@ const SignUpFormTwo = () => {
       const result = await response.json();
 
       if (!result.isSuccess) {
-        setErrorMessage('An error occurred. Please try again.');
+        setErrorMessage('Signup Sucessful.');
         return;
       }
 

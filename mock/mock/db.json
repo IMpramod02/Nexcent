@@ -183,6 +183,14 @@
       "username": "monty",
       "password": "m0975",
       "id": "80ad451d-a3a3-4956-b175-a8aeab9ba936"
+    },
+    {
+      "username": "Abhisekh",
+      "password": "Abhi@90",
+      "id": "e8209888-c32f-471b-bcc9-5b616b351f75",
+      "fullname": "Abhisekh Hm",
+      "dob": "2000-01-01",
+      "email": "abi200@gmail.com"
     }
   ]
 }
