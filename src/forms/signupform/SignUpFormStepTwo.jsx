@@ -136,6 +136,7 @@ const SignUpFormTwo = () => {
   const [dob, setDob] = useState('');
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -153,6 +154,9 @@ const SignUpFormTwo = () => {
 
   const handleNextStep = async (e) => {
     e.preventDefault();
+
+    setErrorMessage('');
+    setSuccessMessage('');
 
     if (!fullname || !dob || !email) {
       setErrorMessage('Please fill out all fields.');
@@ -174,13 +178,23 @@ const SignUpFormTwo = () => {
       });
 
       const result = await response.json();
+      console.log('API response:', result); // Debugging log
 
-      if (!result.isSuccess) {
-        setErrorMessage('Signup Sucessful.');
-        return;
+      // Check if response contains updated fields to determine success
+      if (
+        result &&
+        result.fullname === fullname &&
+        result.email === email &&
+        result.dob === dob
+      ) {
+        console.log('Signup successful, navigating to dashboard...');
+        // navigate('/en/dashboard');
+        navigate('/en/dashboard', {
+          state: { userId, token }, // Pass userId and token as state
+        });
+      } else {
+        setErrorMessage('Signup unsuccessful. Please try again.');
       }
-
-      navigate('/homepage');
     } catch (err) {
       console.log('Error occurred:', err);
       setErrorMessage('An error occurred during submission.');

@@ -15,6 +15,7 @@ import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
 import SignUpForm from './forms/signupform/signupform';
 import SignUpFormStepTwo from './forms/signupform/SignUpFormStepTwo';
 import LoginForm from './forms/loginform/loginform';
+import DashboardPage from './components/pages/homepage/section/dashboardsection/dashboard';
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path="login" element={<LoginForm />} />
             </Route>
             <Route path="faq" element={<FAQPage />} />
+            <Route path="dashboard" element={<DashboardPage />} />
           </Route>
 
           <Route path="/" element={<Navigate to="/en/home" />} />

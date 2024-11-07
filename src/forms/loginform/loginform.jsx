@@ -157,6 +157,7 @@
 // export default LoginForm;
 
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './LoginForm.scss';
 import FaEnvelope from '../../assets/icons/FaEye.png';
 import FaEye from '../../assets/icons/FaUser.png';
@@ -166,6 +167,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -188,10 +190,19 @@ const LoginForm = () => {
       });
 
       const data = await response.json();
+      console.log('API response:', data);
 
       if (response.ok) {
         setSuccessMessage('Login successful!');
-        console.log(data.token);
+        const { token, id: userId } = data;
+        if (!userId || !token) {
+          setErrorMessage('Login response missing user ID or token.');
+          return;
+        }
+        // console.log(data.token);
+        console.log(`Token: ${token}, UserID: ${userId}`);
+        // navigate('/en/dashboard');
+        navigate('/en/dashboard', { state: { token, userId } });
       } else {
         setErrorMessage(data.message || 'Login failed.');
       }
