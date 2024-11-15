@@ -193,25 +193,30 @@ const DashboardPage = () => {
 
   const userId = location.state?.userId;
   const token = location.state?.token;
-
   useEffect(() => {
-    if (!userId || !token) {
+    const storedToken = localStorage.getItem('token');
+    const storedUserId = localStorage.getItem('userId');
+
+    if (!storedToken || !storedUserId) {
       console.error(
-        'No userId or token found in location state, redirecting to login...'
+        'No token or userId in local storage, redirecting to login...'
       );
       navigate('/en/home/login');
-      return; // use effect cannot have method inside it
+      return;
     }
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/users/${userId}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await fetch(
+          `http://localhost:5000/users/${storedUserId}`,
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${storedToken}`,
+            },
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
@@ -228,7 +233,7 @@ const DashboardPage = () => {
     };
 
     fetchUserData();
-  }, [userId, token, navigate]);
+  }, [navigate]);
 
   return (
     <div className="dashboard">

@@ -34,13 +34,11 @@ const SignUpForm = () => {
       }
 
       const { token, id: userId } = result;
-      // const token = result.token;
-      // const userId = result.id;
 
-      console.log('Token:', token);
-      console.log('UserId:', userId);
+      localStorage.setItem('token', token);
+      localStorage.setItem('userId', userId);
 
-      navigate('/en/home/signup/step2', { state: { token, userId } });
+      navigate('/en/home/signup/step2');
     } catch (err) {
       console.log('Error occurred:', err);
       setErrorMessage('An error occurred during signup.');

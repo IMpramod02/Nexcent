@@ -169,6 +169,53 @@ const LoginForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+
+  //   setErrorMessage('');
+  //   setSuccessMessage('');
+
+  //   if (!username || !password) {
+  //     setErrorMessage('Please fill out all fields.');
+  //     return;
+  //   }
+
+  //   try {
+  //     const response = await fetch('http://localhost:5000/login', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ username, password }),
+  //     });
+
+  //     const data = await response.json();
+  //     console.log('API response:', data);
+
+  //     if (response.ok) {
+  //       setSuccessMessage('Login successful!');
+  //       const { token, id: userId } = data;
+  //       if (!userId || !token) {
+  //         setErrorMessage('Login response missing user ID or token.');
+  //         return;
+  //       }
+
+  //       // Save token and userId to localStorage
+  //       localStorage.setItem('token', token);
+  //       localStorage.setItem('userId', userId);
+  //       // console.log(data.token);
+  //       console.log(`Token: ${token}, UserID: ${userId}`);
+  //       // navigate('/en/dashboard');
+  //       navigate('/en/dashboard', { state: { token, userId } });
+  //     } else {
+  //       setErrorMessage(data.message || 'Login failed.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     setErrorMessage('An error occurred. Please try again.');
+  //   }
+  // };
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -183,9 +230,7 @@ const LoginForm = () => {
     try {
       const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });
 
@@ -195,14 +240,16 @@ const LoginForm = () => {
       if (response.ok) {
         setSuccessMessage('Login successful!');
         const { token, id: userId } = data;
+
         if (!userId || !token) {
           setErrorMessage('Login response missing user ID or token.');
           return;
         }
-        // console.log(data.token);
-        console.log(`Token: ${token}, UserID: ${userId}`);
-        // navigate('/en/dashboard');
-        navigate('/en/dashboard', { state: { token, userId } });
+
+        localStorage.setItem('token', token);
+        localStorage.setItem('userId', userId);
+
+        navigate('/en/dashboard');
       } else {
         setErrorMessage(data.message || 'Login failed.');
       }
