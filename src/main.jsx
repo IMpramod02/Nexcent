@@ -1,3 +1,59 @@
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   Navigate,
+//   Outlet,
+// } from 'react-router-dom';
+// import './styles/global.scss';
+// import Navbar from './components/global/navbar/Navbar';
+// import HomePage from './pages/homepage/homepage';
+// import FAQPage from './components/pages/homepage/section/faqsection/faqpage';
+// import SignUpForm from './forms/signupform/signupform';
+// import SignUpFormStepTwo from './forms/signupform/SignUpFormStepTwo';
+// import LoginForm from './forms/loginform/loginform';
+// import DashboardPage from './components/pages/homepage/section/dashboardsection/dashboard';
+// import { LanguageProvider } from './context/LanguageContext';
+
+// function App() {
+//   return (
+//     <Router>
+//       <LanguageProvider>
+//         <Navbar />
+//         <Routes>
+//           <Route path="/:lang" element={<MainLayout />}>
+//             <Route path="home" element={<HomePage />}>
+//               <Route path="signup" element={<SignUpForm />} />
+//               <Route path="signup/step2" element={<SignUpFormStepTwo />} />
+//               <Route path="login" element={<LoginForm />} />
+//             </Route>
+//             <Route path="faq" element={<FAQPage />} />
+//             <Route path="dashboard" element={<DashboardPage />} />
+//           </Route>
+
+//           <Route path="/" element={<Navigate to="/en/home" />} />
+//         </Routes>
+//       </LanguageProvider>
+//     </Router>
+//   );
+// }
+
+// const MainLayout = () => (
+//   <div>
+//     <Outlet />
+//   </div>
+// );
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+
+// export default App;
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -16,6 +72,7 @@ import SignUpFormStepTwo from './forms/signupform/SignUpFormStepTwo';
 import LoginForm from './forms/loginform/loginform';
 import DashboardPage from './components/pages/homepage/section/dashboardsection/dashboard';
 import { LanguageProvider } from './context/LanguageContext';
+import AuthCheck from './components/global/AuthCheck';
 
 function App() {
   return (
@@ -30,9 +87,16 @@ function App() {
               <Route path="login" element={<LoginForm />} />
             </Route>
             <Route path="faq" element={<FAQPage />} />
-            <Route path="dashboard" element={<DashboardPage />} />
-          </Route>
 
+            <Route
+              path="dashboard"
+              element={
+                <AuthCheck>
+                  <DashboardPage />
+                </AuthCheck>
+              }
+            />
+          </Route>
           <Route path="/" element={<Navigate to="/en/home" />} />
         </Routes>
       </LanguageProvider>
